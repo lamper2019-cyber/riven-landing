@@ -14,7 +14,8 @@ export async function POST(req: Request) {
 
     const today = new Date().toISOString().split("T")[0];
 
-    await appendLeadRow([email, "landing page", "2", today]);
+    // Columns: A=Name, B=Email, C=Phone, D=Date Entered, E=Source, F=Lead Score
+    await appendLeadRow(["", email, "", today, "landing page", "2"]);
 
     return NextResponse.json({ success: true });
   } catch (error) {
