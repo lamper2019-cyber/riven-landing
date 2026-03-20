@@ -15,9 +15,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "OBSIDIAN KINETIC | Aureus Elite Coaching",
+  title: "RIVEN | Summer Body Blueprint",
   description:
-    "Forging the elite through bespoke physical architecture. The private atelier of performance.",
+    "Lose 20 lbs in 12 weeks. The Summer Body Blueprint built for Black women who are done starting over.",
 };
 
 export default function RootLayout({
