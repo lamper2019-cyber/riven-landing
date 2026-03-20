@@ -90,13 +90,43 @@ export default function LandingPage() {
                 </a>
               </div>
             </div>
-            <div className="hidden lg:col-span-4 lg:flex flex-col justify-end items-end pb-12">
-              <div className="text-right animate-fade-up delay-400">
-                <div className="font-headline text-6xl text-primary font-bold">
-                  20 lbs
+            <div className="hidden lg:col-span-4 lg:flex flex-col justify-center items-center">
+              {/* Animated progress rings */}
+              <div className="relative w-64 h-64 animate-fade-up delay-400">
+                {/* Outer ring */}
+                <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 200 200">
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="#2a2a2a" strokeWidth="4" />
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="#f2ca50" strokeWidth="4" strokeDasharray="565" strokeDashoffset="565" strokeLinecap="round" className="animate-ring-fill" />
+                </svg>
+                {/* Middle ring */}
+                <svg className="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] -rotate-90" viewBox="0 0 200 200">
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="#2a2a2a" strokeWidth="3" />
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="#d4af37" strokeWidth="3" strokeDasharray="565" strokeDashoffset="565" strokeLinecap="round" className="animate-ring-fill-delayed" />
+                </svg>
+                {/* Inner ring */}
+                <svg className="absolute inset-8 w-[calc(100%-4rem)] h-[calc(100%-4rem)] -rotate-90" viewBox="0 0 200 200">
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="#2a2a2a" strokeWidth="2" />
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="#e9c176" strokeWidth="2" strokeDasharray="565" strokeDashoffset="565" strokeLinecap="round" className="animate-ring-fill-slow" />
+                </svg>
+                {/* Center text */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="font-headline text-5xl font-bold text-primary animate-pulse-subtle">12</div>
+                  <div className="font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant mt-1">Weeks</div>
                 </div>
-                <div className="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-2">
-                  In 12 Weeks
+              </div>
+              {/* Phase indicators */}
+              <div className="flex gap-6 mt-8 animate-fade-up delay-600">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <span className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Phase 1</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-primary-container" />
+                  <span className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Phase 2</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-secondary" />
+                  <span className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Phase 3</span>
                 </div>
               </div>
             </div>
@@ -115,23 +145,23 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-8 bg-surface-container-high border-l-2 border-primary">
                 <div className="font-headline text-5xl font-bold text-primary/20 mb-6">01</div>
-                <h3 className="font-headline text-xl font-bold mb-4">The Audit</h3>
+                <h3 className="font-headline text-xl font-bold mb-4">Phase One — Foundation</h3>
                 <p className="font-body text-on-surface-variant leading-relaxed">
-                  We assess where you are. No sugarcoating. Your habits, your nutrition, your movement patterns — all of it gets examined.
+                  We start with what&apos;s easy. Hit 40g of protein before noon. Build the base habits that make everything else click. Small shifts, stacked consistently. No overwhelm — just momentum.
                 </p>
               </div>
               <div className="p-8 bg-surface-container-high border-l-2 border-primary">
                 <div className="font-headline text-5xl font-bold text-primary/20 mb-6">02</div>
-                <h3 className="font-headline text-xl font-bold mb-4">The Protocol</h3>
+                <h3 className="font-headline text-xl font-bold mb-4">Phase Two — Refinement</h3>
                 <p className="font-body text-on-surface-variant leading-relaxed">
-                  A 12-week plan built around your life. Nutrition targets, movement schedule, and weekly check-ins. No guesswork.
+                  Now we tighten up. Strip out what&apos;s holding you back. Introduce glucomannan — a natural supplement that makes appetite control significantly easier. The process starts working with you, not against you.
                 </p>
               </div>
               <div className="p-8 bg-surface-container-high border-l-2 border-primary">
                 <div className="font-headline text-5xl font-bold text-primary/20 mb-6">03</div>
-                <h3 className="font-headline text-xl font-bold mb-4">The Result</h3>
+                <h3 className="font-headline text-xl font-bold mb-4">Phase Three — Acceleration</h3>
                 <p className="font-body text-on-surface-variant leading-relaxed">
-                  20 lbs gone. Clothes fit different. Energy shifts. You stop talking about it and start living it.
+                  Activity goes up. Intensity increases. This is where the transformation becomes visible. Everything from Phase One and Two compounds — and the results speak for themselves.
                 </p>
               </div>
             </div>
@@ -239,7 +269,7 @@ export default function LandingPage() {
                   <div className="font-headline text-2xl font-bold text-secondary">
                     $50
                     <span className="text-sm font-normal text-on-surface-variant">
-                      /60m
+                      {" "}for 60 min
                     </span>
                   </div>
                 </div>
@@ -376,47 +406,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Exclusivity Section */}
-        <section className="bg-surface-container-lowest py-32 px-8">
-          <div className="max-w-screen-xl mx-auto text-center">
-            <span className="font-label text-xs uppercase tracking-[0.4em] text-primary mb-8 block">
-              Limited Enrollment
-            </span>
-            <h2 className="font-headline text-5xl md:text-7xl font-bold mb-12 tracking-tighter">
-              ONLY <span className="italic text-primary">TWELVE</span> SPOTS <br />
-              PER CYCLE.
-            </h2>
-            <p className="font-body text-on-surface-variant text-lg max-w-2xl mx-auto mb-16">
-              Small group. High standards. Every woman in this program gets direct attention — that only works if we keep the numbers tight.
-            </p>
-            <div className="flex flex-wrap justify-center gap-16 mt-8">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-6 gold-glow border border-primary/20">
-                  <Icon name="lock" className="text-primary" />
-                </div>
-                <span className="font-headline text-lg font-bold">
-                  Private Access
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-6 gold-glow border border-primary/20">
-                  <Icon name="trending_up" className="text-primary" />
-                </div>
-                <span className="font-headline text-lg font-bold">
-                  Weekly Check-ins
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-6 gold-glow border border-primary/20">
-                  <Icon name="restaurant" className="text-primary" />
-                </div>
-                <span className="font-headline text-lg font-bold">
-                  Nutrition Protocol
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       {/* Footer */}

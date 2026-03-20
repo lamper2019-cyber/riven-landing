@@ -76,3 +76,40 @@ body {
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
 .delay-600 { animation-delay: 0.6s; }
+
+/* Progress ring animations */
+@keyframes ringFill {
+  from { stroke-dashoffset: 565; }
+  to { stroke-dashoffset: 140; }
+}
+
+@keyframes ringFillDelayed {
+  from { stroke-dashoffset: 565; }
+  to { stroke-dashoffset: 200; }
+}
+
+@keyframes ringFillSlow {
+  from { stroke-dashoffset: 565; }
+  to { stroke-dashoffset: 280; }
+}
+
+@keyframes pulseSub {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-ring-fill {
+  animation: ringFill 2s ease-out 0.6s both;
+}
+
+.animate-ring-fill-delayed {
+  animation: ringFillDelayed 2s ease-out 1s both;
+}
+
+.animate-ring-fill-slow {
+  animation: ringFillSlow 2s ease-out 1.4s both;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSub 3s ease-in-out infinite;
+}
